@@ -1,0 +1,16 @@
+<el-popover
+  placement="top-start"
+  title="打卡详情"
+  width="200"
+  trigger="hover"
+  v-if="state !=='' "
+>
+  <div v-if="current !==null" class="checkin-info">
+    <div class="info-item">首次打卡:<em>{{current.checkinTime}}</em></div>
+    <div class="info-item">最后打开:<em>{{current.checkoutTime}}</em></div>
+    <div class="info-item">时长:<em>{{current.duration}}</em></div>
+  </div>
+  <el-tag slot="reference" :type="state" effect="dark" size="mini">
+    {{state == 'success' ? '正常' : '异常' }}
+  </el-tag>
+</el-popover>
